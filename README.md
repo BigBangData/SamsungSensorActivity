@@ -8,6 +8,7 @@ Tidy Dataset Project for 'Getting and Cleaning Data' - JHU Data Science Speciali
 2. Raw Data description
 3. R script analysis
 4. Tidy Dataset overview
+5. Sources
 
 ===============================================================================
 	
@@ -197,23 +198,22 @@ project guidelines:
 # 4 - TIDY DATASET OVERVIEW
 
 The resulting 'TidyData' data frame in R and 'TidyData.txt' output in the 
-working directory are the long version of tidy data, as explained by David Hood 
-("the long form as mentioned in the rubric, as either long or wide form is 
-acceptable") in his tutorial: 
-<https://thoughtfulbloke.wordpress.com/2015/09/09/getting-and-cleaning-the-assignment>
+working directory should be identical, and have 181 lines (a header and 180
+observations) and 81 variables.
 
 To read the tidy data back into R:
 
     TidyData <- read.table("./TidyData.txt", header = TRUE, stringsAsFactors = FALSE)
     View(TidyData)
 
-The CodeBook.md further describes the tidy dataset and all the variables.
+The CodeBook.md further describes the tidy dataset and all of its variables.
 
 ===============================================================================
 
+# 5- SOURCES
 
-
-
+I am indebted to David Hood for his 'infamous tutorial', which helped me in organizing this project:
+<https://thoughtfulbloke.wordpress.com/2015/09/09/getting-and-cleaning-the-assignment>
 
 
 
