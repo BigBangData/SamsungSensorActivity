@@ -1,6 +1,6 @@
-This code book has two sections:
+#### This code book has two sections:
 
-- Tidy Dataset Overview: describes dimentions, structure, features, variables and their renaming.
+- Tidy Dataset Overview: describes dimensions, structure, features, variables and their renaming.
 - Data Dictionary: describes each variable.
 
 # Tidy Dataset Overview
