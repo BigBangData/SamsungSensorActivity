@@ -10,7 +10,7 @@ This README file comprises:
 4. Tidy Dataset overview
 
 ===============================================================================
-#1 - PROJECT OVERVIEW
+	1 - PROJECT OVERVIEW
 
 The Tidy Dataset Project computes averages on mean and standard deviation 
 measurements in the Human Activity Recognition Using Smartphones Dataset. 
@@ -34,7 +34,7 @@ The final Tidy Dataset comprises:
 from mean and std measures in the raw data
 
 Project files, located in the GitHub repo
- <https://github.com/BigBangData/SamsungSensorActivity>):
+ <https://github.com/BigBangData/SamsungSensorActivity>:
 - 'README.md': explains all the analysis files submitted in this project, 
 including an R script analysis
 - 'UCI HAR Dataset': a folder containing the raw data (see #2 for directory)
@@ -43,7 +43,7 @@ including an R script analysis
 - 'CodeBook.md': describes the data the variables in the tidy dataset
 
 ===============================================================================
-#2 - RAW DATA DESCRIPTION
+	2 - RAW DATA DESCRIPTION
 
 The original project, Human Activity Recognition Using Smartphones Dataset, 
 Version 1.0, was conducted by Jorge L. Reyes-Ortiz, Davide Anguita, Alessandro 
@@ -56,7 +56,7 @@ dataset was randomly partitioned into a training and test subsets with 70 and
 
 For a complete description and access to the original dataset, visit:
 <http://archive.ics.uci.edu/ml/dataset>. A video of the experiment can be seen 
-here: <http://www.youtube.com/watch?v=XOEN9W05_4A>
+here: <http://www.youtube.com/watch?v=XOEN9W05_4A>.
 For more information about this dataset please contact: 
 activityrecognition '@' smartlab.ws
 
@@ -92,7 +92,7 @@ variables (weighted average of the frequency components to obtain a mean
 frequency).
 
 ===============================================================================
-#4 - RUN_ANALYSIS.R SCRIPT ANALYSIS
+	3 - RUN_ANALYSIS.R SCRIPT ANALYSIS
 
 The run_analysis.r script was created using R version 3.4.2 on a 
 x86_64-w64-mingw32 platform.  Please make sure to have a compatible system and 
@@ -107,17 +107,17 @@ WARNING: the first command, rm(list=ls()), clears your workspace completely.
     unzip(zipfile = "./smartphones.zip")
 	
 ## Sourcing the R script:
-(Please make sure to download the R script submitted (run_analysis.r) into your 
-working directory first.)
+Please make sure to download the R script submitted (run_analysis.r) into your 
+working directory first.
 
     source("./run_analysis.r")
 
 ## Setup: loads datasets.
 
 Starts in the working directory, switches directories, entering and extiting the 
-UCI HAR Dataset folder to access the train and test folders.
+UCI HAR Dataset folder to access the train and test folders. Reads data into data 
+frames labelled so as to identify each data component:
 
-Reads data into data frames labelled so as to identify each data component:
 - subject_id_Test: subject ids for the test data
 - activity_label_Test: activity labels for the test data
 - data_Test: actual test data
@@ -135,17 +135,16 @@ Merges the Test and Train data frames into one big data frame with all the
 observations.
 
 The resulting TestTrain data frame has 10299 observations of 563 variables, 
-with 2 added variables 
-(subject ids and activity labels) to the 561 features of the original dataset.  
-The variables are named V1, V1.1, V1.2, V2, V3, V4 ... V561. 
+with 2 added variables (subject ids and activity labels) to the 561 
+features of the original dataset. The variables are named V1, V1.1, V1.2, 
+V2, V3, V4 ... V561. 
 
 The TestTrain data frame starts with the 8 test subjects (2, 4, 9, 10, 12, 13, 
 18, 20, 24) and proceeds with the remaining 22 train subjects. The activity 
 labels are numbers (1-6) and there are several repeated observations of 
 each activity for each subject. 
 
-## 2. Extracts only the measurements on the mean and standard deviation for 
-each measurement. 
+## 2. Extracts only the measurements on the mean and standard deviation for each measurement. 
 
 Subsets columns with mean(), std() and meanFreq() measures in the TestTRain 
 data frame. The resulting data frame has 10299 observations of 81 variables
@@ -155,14 +154,13 @@ data frame. The resulting data frame has 10299 observations of 81 variables
 
 Reads in the 'activity_labels.txt' file and creates a data frame linking 
 activity numbers with descriptions. Applies activity descriptions to the 
-activity ID variable by matching ID numbers with those descriptions.  
-
-This process effectively renames all the activity using the original (and 
+activity ID variable by matching ID numbers with those descriptions.  This 
+process effectively renames all the activity using the original (and 
 sufficiently descriptive) names:
 
-head(TestTrain_subset[, 2])
-[1] STANDING STANDING STANDING STANDING STANDING STANDING
-Levels: LAYING SITTING STANDING WALKING WALKING_DOWNSTAIRS WALKING_UPSTAIRS
+	head(TestTrain_subset[, 2])
+	[1] STANDING STANDING STANDING STANDING STANDING STANDING
+	Levels: LAYING SITTING STANDING WALKING WALKING_DOWNSTAIRS WALKING_UPSTAIRS
 
 NOTE: the order of levels, although alphabetical, follows a logical progression
 from inactivity to activity, so it was not changed.
@@ -180,8 +178,7 @@ The resulting data frame, sensorData, is now organized by the person-activity
 pair of id variables. Since there are still many observations for each ID pair, 
 step 5 is necessary to achieve a tidy data format.
 
-## 5. From the data set in step 4, creates a second, independent tidy data set
-with the average of each variable for each activity and each subject.
+## 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
 Uses the dplyr package group_by() to group the person and activity into pairs.
 Uses the dplyr package summarise_all() to calculate the mean (average) for each 
@@ -194,7 +191,7 @@ project guidelines:
 	write.table(TidyData, file = "../TidyData.txt", row.name = FALSE, sep = " ")   	
 
 ===============================================================================
-#5 - TIDY DATASET OVERVIEW
+	4 - TIDY DATASET OVERVIEW
 
 The resulting 'TidyData' data frame in R and 'TidyData.txt' output in the 
 working directory are the long version of tidy data, as explained by David Hood 
@@ -210,6 +207,14 @@ To read the tidy data back into R:
 The CodeBook.md further describes the tidy dataset and all the variables.
 
 ===============================================================================
+
+
+
+
+
+
+
+
 
 
 
