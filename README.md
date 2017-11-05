@@ -38,7 +38,6 @@ Project files, located in the GitHub repo
  <https://github.com/BigBangData/SamsungSensorActivity>:
 - 'README.md': explains all the analysis files submitted in this project, 
 including an R script analysis
-- 'UCI HAR Dataset': a folder containing the raw data (see #2 for directory)
 - 'run_analysis.r': R script, the output of which is a tidy dataset
 - 'TidyData.txt': the tidy data set produced by run_analysis.r
 - 'CodeBook.md': describes the data the variables in the tidy dataset
@@ -103,7 +102,7 @@ R version, and have the dplyr package installed.
 
 WARNING: the first command, rm(list=ls()), clears your workspace completely.
 
-### Clear workspace and obtain datasets
+### Clear workspace and download raw data
     rm(list=ls())  
     fileUrl <- "http://archive.ics.uci.edu/ml/machine-learning-databases/00240/UCI%20HAR%20Dataset.zip"
     download.file(fileUrl, destfile = "./smartphones.zip")
