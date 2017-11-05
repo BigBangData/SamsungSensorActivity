@@ -18,8 +18,8 @@ TestTrain <- rbind(Test, Train)
 
 ## 2. Extracts only the measurements on the mean and standard deviation for each measurement. 
 TestTrain_subset <- TestTrain[, c(1:8, 43:48, 83:88, 123:128, 163:168, 203:204, 216:217, 229:230, 242:243,
-									255:256, 268:273, 296:298, 347:352, 375:377, 426:431, 454:456, 505:506, 
-									515, 518:519, 528, 531:532, 541, 544:545, 554)]
+				  255:256, 268:273, 296:298, 347:352, 375:377, 426:431, 454:456, 505:506, 
+				  515, 518:519, 528, 531:532, 541, 544:545, 554)]
 
 ## 3. Uses descriptive activity names to name the activities in the data set.
 activity_labels <- read.table("./activity_labels.txt")
