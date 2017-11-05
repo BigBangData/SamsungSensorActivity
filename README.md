@@ -38,9 +38,9 @@ Project files, located in the GitHub repo
  <https://github.com/BigBangData/SamsungSensorActivity>:
 - 'README.md': explains all the analysis files submitted in this project, 
 including an R script analysis
-- 'run_analysis.r': R script, the output of which is a tidy dataset
-- 'TidyData.txt': the tidy data set produced by run_analysis.r
-- 'CodeBook.md': describes the data the variables in the tidy dataset
+- 'run_analysis.r': R script which performs the analysis and outputs a tidy dataset
+- 'TidyData.txt': the tidy dataset produced by run_analysis.r
+- 'CodeBook.md': describes the data and the variables in the tidy dataset
 
 ===============================================================================
 
