@@ -10,6 +10,7 @@ This README file comprises:
 4. Tidy Dataset overview
 
 ===============================================================================
+	
 	1 - PROJECT OVERVIEW
 
 The Tidy Dataset Project computes averages on mean and standard deviation 
@@ -30,8 +31,8 @@ with the average of each variable for each activity and each subject
 The final Tidy Dataset comprises: 
 - An ID variable of the subject who carried out the experiment
 - An ID variable with one of six activities performed by each subject
-- 79 features (variables), averages for each subject-activity pair, 
-from mean and std measures in the raw data
+- 79 calculated variables, averages, for each subject-activity pair, 
+of mean, std and mean freq. measurements in the raw data
 
 Project files, located in the GitHub repo
  <https://github.com/BigBangData/SamsungSensorActivity>:
@@ -43,6 +44,7 @@ including an R script analysis
 - 'CodeBook.md': describes the data the variables in the tidy dataset
 
 ===============================================================================
+
 	2 - RAW DATA DESCRIPTION
 
 The original project, Human Activity Recognition Using Smartphones Dataset, 
@@ -92,6 +94,7 @@ variables (weighted average of the frequency components to obtain a mean
 frequency).
 
 ===============================================================================
+
 	3 - RUN_ANALYSIS.R SCRIPT ANALYSIS
 
 The run_analysis.r script was created using R version 3.4.2 on a 
@@ -191,6 +194,7 @@ project guidelines:
 	write.table(TidyData, file = "../TidyData.txt", row.name = FALSE, sep = " ")   	
 
 ===============================================================================
+
 	4 - TIDY DATASET OVERVIEW
 
 The resulting 'TidyData' data frame in R and 'TidyData.txt' output in the 
@@ -207,8 +211,6 @@ To read the tidy data back into R:
 The CodeBook.md further describes the tidy dataset and all the variables.
 
 ===============================================================================
-
-
 
 
 
