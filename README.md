@@ -89,16 +89,15 @@ WARNING: the first command, `rm(list=ls())`, clears your global environment work
     unzip(zipfile = "./smartphones.zip")
 ```
 	
-### Sourcing the R script:
+### Source R script
 Please make sure to download the R script submitted (run_analysis.r) into your working directory first.
 
 ```{r}
     source("./run_analysis.r")
 ```    
 
-### Setup: loads datasets.
+### Setup loaded datasets
 
-Starts in the working directory, switches directories, entering and extiting the UCI HAR Dataset folder to access the train and test folders. 
 Reads data into dataframes labelled so as to identify each data component:
 
 - subject_id_Test: subject ids for the test data
@@ -108,26 +107,26 @@ Reads data into dataframes labelled so as to identify each data component:
 - activity_label_Train: activity labels for the train data
 - data_Train: actual training data
 
-### 1. Merges the training and the test sets to create one data set.
+### Merge training and test sets
 
-Binds the columns of subject ids and activity labels with the data for the test set; creates Test data frame.
-Binds the columns of subject ids and activity labels with the data for the traning set; creates Train data frame.
-Merges the Test and Train data frames into one big data frame with all the observations.
+Binds the columns of subject ids and activity labels with the data for the test set; creates Test dataframe.
+Binds the columns of subject ids and activity labels with the data for the traning set; creates Train dataframe.
+Merges the Test and Train dataframes into one big dataframe with all the observations.
 
-The resulting TestTrain data frame has 10299 observations of 563 variables, with 2 added variables (subject ids and activity labels) to the 561 
+The resulting TestTrain dataframe has 10299 observations of 563 variables, with 2 added variables (subject ids and activity labels) to the 561 
 features of the original dataset. The variables are named V1, V1.1, V1.2, V2, V3, V4 ... V561. 
 
-The TestTrain data frame starts with the 8 test subjects (2, 4, 9, 10, 12, 13, 18, 20, 24) and proceeds with the remaining 22 train subjects. 
+The TestTrain dataframe starts with the 8 test subjects (2, 4, 9, 10, 12, 13, 18, 20, 24) and proceeds with the remaining 22 train subjects. 
 The activity labels are numbers (1-6) and there are several repeated observations of each activity for each subject. 
 
-### 2. Extracts only the measurements on the mean and standard deviation for each measurement. 
+### Extract only measurements on the mean and standard deviation 
 
-Subsets columns with `mean()`, `std()` and `meanFreq()` measures in the TestTRain data frame. The resulting data frame has 10299 observations of 81 variables
+Subsets columns with `mean()`, `std()` and `meanFreq()` measures in the TestTrain dataframe. The resulting dataframe has 10299 observations of 81 variables
 (2 person-activity IDs and 79 measurements).
 
-### 3. Uses descriptive activity names to name the activities in the data set.
+### Appropriately label dataset with descriptive variable names
 
-Reads in the 'activity_labels.txt' file and creates a data frame linking activity numbers with descriptions. Applies activity descriptions to the 
+Reads in the 'activity_labels.txt' file and creates a dataframe linking activity numbers with descriptions. Applies activity descriptions to the 
 activity ID variable by matching ID numbers with those descriptions.  This process effectively renames all the activity using the original (and 
 sufficiently descriptive) names:
 
@@ -139,22 +138,22 @@ sufficiently descriptive) names:
 
 - NOTE: the order of levels, although alphabetical, follows a logical progression from inactivity to activity, so it was not changed.
 
-### 4. Appropriately labels the data set with descriptive variable names.
-
-Uses the dplyr function `arrange()` to organize the data frame according to subject ids first, then activity labels. Uses the dplyr function `rename()` to 
+Uses the dplyr function `arrange()` to organize the dataframe according to subject ids first, then activity labels. Uses the dplyr function `rename()` to 
 rename all variables with descriptive names. 
 
 (For further information on renaming variables and their descriptions, please consult the CodeBook.md)
 
-The resulting data frame, sensorData, is now organized by the person-activity pair of id variables. Since there are still many observations for each ID pair, 
+The resulting dataframe, sensorData, is now organized by the person-activity pair of id variables. Since there are still many observations for each ID pair, 
 step 5 is necessary to achieve a tidy data format.
 
-### 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+### Create tidy dataset 
+
+From the dataset in the last step, creates a second, independent tidy dataset with the average of each variable for each activity and each subject.
 
 Uses the dplyr function `group_by()` to group the person and activity into pairs. Uses the dplyr function `summarise_all()` to calculate the mean for each 
 grouped person-activity pair. Simplifies the class to be a simple dataframe instead of a grouped_df, tbl_df, and tbl as well.
 
-Writes the data frame into a text file for submission, in compliance with 
+Writes the dataframe into a text file for submission, in compliance with 
 project guidelines:
 
 ```{r}
@@ -165,7 +164,7 @@ project guidelines:
 
 ## 4 - TIDY DATASET OVERVIEW
 
-The resulting 'TidyData' data frame in R and 'TidyData.txt' output in the 
+The resulting 'TidyData' dataframe in R and 'TidyData.txt' output in the 
 working directory should be identical, and have 181 lines (a header and 180
 observations) and 81 variables.
 
