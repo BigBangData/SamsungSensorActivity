@@ -11,7 +11,7 @@ __Contents__:
 
 ## 1 - OVERVIEW
 
-The Tidy Dataset Project computes averages on mean and standard deviation measurements in the [Human Activity Recognition Using Smartphones Dataset](http://archive.ics.uci.edu/ml/dataset). 
+The Tidy Dataset Project computes averages on mean and standard deviation measurements in the [Human Activity Recognition Using Smartphones Dataset](https://archive.ics.uci.edu/ml/datasets/human+activity+recognition+using+smartphones). 
 
 The TidyData.txt dataset is the result of running the run_analysis.r script, which performs these steps: 
 1. Merges the training and the test sets to create one data set
