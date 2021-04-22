@@ -1,10 +1,25 @@
 ## SETUP
 
-# cleanup global env
-rm(list=ls())
-# setup dir
+# environment setup 
+rm(list = ls())
+options(scipen=999)
+
+# install and load packages  
+install_packages <- function(package){
+  newpackage <- package[!(package %in% installed.packages()[, "Package"])]
+  if (length(newpackage)) {
+    suppressMessages(install.packages(newpackage, dependencies = TRUE))
+  }
+  sapply(package, require, character.only = TRUE)
+}
+
+packages <- c("dplyr")
+suppressPackageStartupMessages(install_packages(packages))
+
 setwd("../GitHub/SamsungSensorActivity/")
-# download if first time
+
+## DOWNLOAD DATA
+
 if (!dir.exists("UCI HAR Dataset")) {
 	URL <- paste0("http://archive.ics.uci.edu/ml/"
 		     ,"machine-learning-databases/00240/"
@@ -62,7 +77,6 @@ x <- sub("-meanFreq\\(\\)-Z", "Z.meanFreq", x)
 x <- sub("-mean\\(\\)", ".mean", x)
 x <- sub("-std\\(\\)", ".sd", x)
 x <- sub("-meanFreq\\(\\)", ".meanFreq", x)
-
 names(X_sub) <- x
 
 # create independent tidy dataset with the mean of each variable
