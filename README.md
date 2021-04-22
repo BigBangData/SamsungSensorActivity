@@ -218,7 +218,8 @@ Groups by person and activity before calculating the mean for each pair-feature 
 Writes the dataframe into a text file for submission, in compliance with project guidelines:
 
 ```{r}
-	write.table(X_tidy, file = "../TidyData.txt", row.name = FALSE, sep = " ")   	
+# save as text
+write.table(X_tidy, file = "../TidyData.txt", row.name = FALSE, sep = " ")   	
 ```
 
 Back to [Contents.](#contents)
@@ -230,8 +231,8 @@ The resulting 'TidyData' dataframe in R and 'TidyData.txt' output in the working
 To read the tidy data back into R:
 
 ```{r}
-    X <- read.table("./TidyData.txt", header = TRUE, stringsAsFactors = FALSE)
-    View(X)
+X <- read.table("./TidyData.txt", header = TRUE, stringsAsFactors = FALSE)
+View(X)
 ```    
 
 The CodeBook.md further describes the tidy dataset and all of its variables.
