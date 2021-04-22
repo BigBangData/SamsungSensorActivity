@@ -74,14 +74,6 @@ Back to [Contents.](#contents)
 System info for reproducibility:
 ```
 platform       x86_64-w64-mingw32          
-arch           x86_64                      
-os             mingw32                     
-system         x86_64, mingw32                          
-major          4                           
-minor          0.2                         
-year           2020                        
-month          06                          
-day            22                          
 svn rev        78730                       
 language       R                           
 version.string R version 4.0.2 (2020-06-22)
@@ -90,7 +82,7 @@ nickname       Taking Off Again
 
 ### Running the script 
 
-The script can be run as a standalone script via, given the appropriate folder structure (notice call to `setwd()` in Setup).
+Run standalone script given the appropriate folder structure (notice call to `setwd()` in Setup).
 
 ```{r}
 source("./tidydata.r")
@@ -235,7 +227,7 @@ X <- read.table("./TidyData.txt", header = TRUE, stringsAsFactors = FALSE)
 View(X)
 ```    
 
-The CodeBook.md further describes the tidy dataset and all of its variables.
+The [CodeBook](https://github.com/BigBangData/SamsungSensorActivity/blob/main/CodeBook.md) further describes the tidy dataset and all of its variables.
 
 ## Sources:
 
