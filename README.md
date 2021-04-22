@@ -71,14 +71,29 @@ Back to [Contents.](#contents)
 
 ## R script:
 
-The `tidydata.r` script was created using R version 3.4.2 on a x86_64-w64-mingw32 platform.  
+System info for reproducibility:
+```
+platform       x86_64-w64-mingw32          
+arch           x86_64                      
+os             mingw32                     
+system         x86_64, mingw32                          
+major          4                           
+minor          0.2                         
+year           2020                        
+month          06                          
+day            22                          
+svn rev        78730                       
+language       R                           
+version.string R version 4.0.2 (2020-06-22)
+nickname       Taking Off Again   
+```
 
 ### Running the script 
 
-The script can be run as a standalone script via, given the appropriate folder structure. I setup my working directory to be "../GitHub/SamsungSensorActivity/":
+The script can be run as a standalone script via, given the appropriate folder structure (notice call to `setwd()` in Setup).
 
 ```{r}
-    source("./tidydata.r")
+source("./tidydata.r")
 ``` 
 
 ### Setup 
@@ -86,7 +101,6 @@ The script can be run as a standalone script via, given the appropriate folder s
 ```{r}
 # environment setup 
 rm(list = ls())
-options(scipen=999)
 
 # install and load packages  
 install_packages <- function(package){
